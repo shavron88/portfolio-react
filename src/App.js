@@ -1,29 +1,32 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Effects from "./components/Effects";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
 import About from "./components/About";
-import Projects, { ProjectPage } from "./components/Projects";
+import Services from "./components/Services";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Academy from "./components/Academy";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
+    <>
+      <Effects />
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <About />
-              <Projects />
-              <Contact />
-            </>
-          }
-        />
-        <Route path="/projects/:id" element={<ProjectPage />} />
-      </Routes>
-    </Router>
+      <main id="top">
+        <Hero />
+        <Marquee />
+        <About />
+        <Services />
+        <Skills />
+        <Projects />
+        <Academy />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
 
